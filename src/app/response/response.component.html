@@ -1,0 +1,31 @@
+<div class="response-container">
+  <ng-container *ngIf="statusCode === 200 && requestData.firstName">
+    <h2 class="success-message">Owner Data Added Successfully</h2>
+    <div>
+      <h3 class="postdata">Data Sent:</h3>
+      <p><strong>First Name:</strong> {{ requestData.firstName }}</p>
+      <p><strong>Last Name:</strong> {{ requestData.lastName }}</p>
+      <p><strong>Address:</strong> {{ requestData.address }}</p>
+      <p><strong>City:</strong> {{ requestData.city }}</p>
+      <p><strong>Telephone:</strong> {{ requestData.telephone }}</p>
+    </div>
+  </ng-container>
+
+  
+  <ng-container *ngIf="statusCode !== 200 && requestData.firstName">
+    <h2 class="error-message">Failed to Add Owner Data</h2>
+    <div *ngIf="responseBody">
+      <p class="message">{{ responseBody.message }} (Status code: {{ statusCode }})</p>
+    </div>
+  </ng-container>
+
+  
+  <ng-container *ngIf="!requestData.firstName">
+    <div *ngIf="statusCode !== 200">
+      <h2 class="error-message">Failed to Fetch Owner Data</h2>
+      <div *ngIf="responseBody">
+        <p class="message">{{ responseBody.message }} (Status code: {{ statusCode }})</p>
+      </div>
+    </div>
+  </ng-container>
+</div>

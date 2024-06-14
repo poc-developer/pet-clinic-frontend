@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetClinic :: a Spring Framework</title>
+    
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li class="navbar-brand"></li>
+            <a class="nav-button" routerLink="/" ariaCurrentWhenActive="page">Home</a>
+            <a class="nav-button" routerLink="/owners/find" ariaCurrentWhenActive="page">Find Owner</a>
+        </ul>
+    </nav>
+
+    <router-outlet></router-outlet>
+    <div class="image-container">
+        <img src="assets/spring-pivotal-logo.png" alt="Pivotal-logo">
+    </div>
+    
+
+</body>
+</html>

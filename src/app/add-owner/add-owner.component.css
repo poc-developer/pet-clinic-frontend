@@ -1,0 +1,44 @@
+.new-owner-container {
+    text-align: left;
+    padding-top: 50px;
+    padding-left: 100px; /* Optional: Add padding to the right */
+  }
+  
+  .new-owner-heading {
+    display: inline-block;
+    padding-bottom: 30px;
+  }
+  .form-control {
+    width: 70%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .btn-add {
+    background-color: #333;  
+    color: white;           
+    border: 2px solid #70b43c;  
+    padding: 10px 20px;     
+    text-align: center;     
+    text-decoration: none;  
+    display: inline-block;  
+    font-size: 16px;        
+    cursor: pointer;        
+    border-radius: 5px;     
+  }
+  
+  .btn-add:hover {
+    background-color: #70b43c;  /* Green background on hover */
+    color: white;               
+  }
+  .d-none {
+    display: none;
+  }
+  .validation-error{
+    margin-bottom: 20px;
+}
+  

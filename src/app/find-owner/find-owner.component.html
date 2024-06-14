@@ -1,0 +1,13 @@
+<div class="find-owners-container">
+  <h2>Find Owners</h2>
+  <form (submit)="findOwner(lastName.value); $event.preventDefault();">
+    <div class="form-group">
+      <label for="lastName">Last name</label><br>
+      <input type="text" id="lastName" #lastName name="lastName" class="form-control">
+    </div>
+    <div class="buttons">
+      <button type="submit" class="btn btn-find">Find Owner</button>
+      <button type="button" class="btn btn-add" (click)="addOwner()">Add Owner</button>
+    </div>
+  </form>
+</div>

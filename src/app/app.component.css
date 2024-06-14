@@ -1,0 +1,52 @@
+.navbar {
+  background-color: #333333;
+  padding: 20px 10px; 
+  margin: 0;
+  display: flex;
+  align-items: center; 
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center; 
+}
+
+.navbar ul li {
+  margin-right: 0px; 
+}
+
+.navbar-brand {
+  background: url('/assets/Spring-data-logo.png') no-repeat center;
+  background-size: contain; 
+  width: 150px; 
+  height: 40px; 
+  display: inline-block;
+  margin-right: 30px; 
+  
+}
+
+.nav-button{
+  background-color: #333333;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px; 
+  display: inline-block;
+}
+
+.nav-button:hover {
+  background-color: #70b43c;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.image-container img {
+  width: auto; 
+  height: 42px; 
+}
+
