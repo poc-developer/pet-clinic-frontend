@@ -13,38 +13,40 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
+                echo '=== Installing Dependencies ==='
                 bat 'npm install'
+                echo '=== Installed Dependencies ==='
             }
-
         }
+        // stage('ServerStart') {
+        //     steps {
+        //         echo '=== Starting Development Server ==='
+        //         bat 'ng serve --port 4200 &'              
+        //         echo '=== Started Development Server ==='
+        //     }
+        // }
+
+        // stage('Test') {
+        //     steps {
+        //         echo '=== Running Unit Test ==='
+        //         bat 'ng test'
+        //         echo '=== Completed Unit Test ==='
+        //     }
+        // }
         stage('Build') {
             steps {
-                bat 'npm run build'
-            }
-        }
-        stage('Test') {
-            steps {
-                bat 'npm test'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                bat '''
-                set DEPLOY_DIR=C:\\Workspace\\PocDeveloper\\deploy
-                if not exist %DEPLOY_DIR% (
-                mkdir %DEPLOY_DIR%
-                )
-                xcopy /s /e /y dist\\* %DEPLOY_DIR%
-                '''
+                echo '=== Building Application ==='
+                bat 'ng build'
+                echo '=== Built Application ==='
             }
         }
     }
     post {
         success {
-            echo 'Deployment successful'
+            echo 'Build successful'
         }
         failure {
-            echo 'Deployment failed'
+            echo 'Build failed'
         }
     }
 }
