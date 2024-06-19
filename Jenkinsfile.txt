@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+    
+    tools {
+        nodejs 'Node'
+    }
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git url: 'https://github.com/poc-developer/pet-clinic-frontend', branch: 'main'
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm install'
+            }
+
+        }
+        stage('Build') {
+            steps {
+                bat 'npm run build'
+            }
+        }
+        stage('Test') {
+            steps {
+                bat 'npm test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                bat '''
+                set DEPLOY_DIR=C:\\Workspace\\PocDeveloper\\deploy
+                if not exist %DEPLOY_DIR% (
+                mkdir %DEPLOY_DIR%
+                )
+                xcopy /s /e /y dist\\* %DEPLOY_DIR%
+                '''
+            }
+        }
+    }
+    post {
+        success {
+            echo 'Deployment successful'
+        }
+        failure {
+            echo 'Deployment failed'
+        }
+    }
+}
