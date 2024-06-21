@@ -18,6 +18,15 @@ pipeline {
                 echo '=== Installed Dependencies ==='
             }
         }
+
+        stage('Build') {
+            steps {
+                echo '=== Building Application ==='
+                bat 'ng build'
+                echo '=== Built Application ==='
+            }
+        }
+
         // stage('ServerStart') {
         //     steps {
         //         echo '=== Starting Development Server ==='
@@ -33,13 +42,7 @@ pipeline {
         //         echo '=== Completed Unit Test ==='
         //     }
         // }
-        stage('Build') {
-            steps {
-                echo '=== Building Application ==='
-                bat 'ng build'
-                echo '=== Built Application ==='
-            }
-        }
+
     }
     post {
         success {
